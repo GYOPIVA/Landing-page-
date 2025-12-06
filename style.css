@@ -1,0 +1,203 @@
+/* --- Reset Básico (A "Funilaria") --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* --- O Efeito Parallax (Mágica 1) --- */
+.hero-section {
+
+
+    /* 1. Imagem de Fundo */
+    /* Peça para eles baixarem uma imagem de 'tech' (do Unsplash, Pexels) e colocar na pasta */
+    background-image: url(wallpaper.jpg);
+    /* 2. O Pulo do Gato */
+
+    /* Isso congela o fundo */
+    background-attachment: fixed;
+    /* 3. Ajustes de Cobertura */
+    height: 100vh;
+    /* 100% da altura da tela */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #333;
+
+
+    /* 4. Textinho centralizado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: #f4f4f4;
+}
+
+.hero-text p {
+    font-size: 1.8rem;
+    color: azure;
+    margin-top: 20px;
+}
+
+/* --- Seções de Conteúdo --- */
+.content-section1 {
+    padding: 80px 20px;
+    /* Isso 'corta' o conteúdo que vaza para fora, essencial para o slide-in */
+    overflow-x: hidden;
+    background: linear-gradient(#000000, #050022);
+    height: 100vh;
+}
+
+.content-section2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    padding: 80px 20px;
+    overflow-x: hidden;
+    height: 100vh;
+    background: linear-gradient( #050022, #120d3d);
+}
+.content-section3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    padding: 80px 20px;
+    overflow-x: hidden;
+    height: 100vh;
+    background: linear-gradient( #120d3d, #140e49);
+}
+
+
+.card1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 100px;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
+}
+
+.section-aprender {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-aprender h1 {
+    font-size: 1.5rem;
+}
+
+.content-section2 h2 {
+    color: aliceblue;
+    font-size: 3rem;
+}
+
+.minicard:hover{
+    transform: scale(1.1);
+}
+
+.minicard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
+    margin-top: 30px;
+    background-color: aliceblue;
+    transition: all ease-in-out 0.3s;
+}
+
+.card1 h2,
+p {
+    color: aliceblue;
+}
+
+.card1 h2 {
+    font-size: 3rem;
+}
+
+.card1 p {
+    font-size: 1.3rem;
+}
+
+
+.bg-dark .card {
+    background-color: #333;
+    color: white;
+}
+
+/* --- O Botão (CTA) --- */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+/* --- A Mágica do Scroll (Mágica 2) --- */
+
+/* * ESTADO INICIAL (Escondido)
+ * O elemento COMEÇA assim.
+*/
+.hidden {
+    opacity: 0;
+    /* 'transition' é a chave! Diz ao CSS para 'animar' qualquer mudança
+       que aconteça nessas propriedades (opacity, transform). */
+    transition: all 1s ease-out;
+}
+
+/* Modificadores de direção */
+.hidden-left {
+    transform: translateX(-100%);
+}
+
+.hidden-right {
+    transform: translateX(100%);
+}
+
+
+.hidden-fade {
+    /* Só precisa da 'opacity: 0' da classe .hidden principal */
+    transform: translateY(50px);
+    /* Bônus: sobe um pouquinho */
+}
+
+
+/* * ESTADO FINAL (Visível)
+ * Esta é a classe que o JavaScript vai ADICIONAR.
+*/
+.show {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
